@@ -11,6 +11,8 @@ else
 fi
 
 
+output=$(python3 -c "print(f'{$TOTAL_BALANCE/1000000000000.0:.8f}')" 2>&1)
+
 cat zombie_static.html > zombie_index.html 
-echo "<h3>Total Balance</h3> <p> $TOTAL_BALANCE </p> </pre>" >> zombie_index.html 
+echo "<h3>Total Balance</h3> <p>$output</p> </pre>" >> zombie_index.html 
 echo "</body></html>" >> zombie_index.html
